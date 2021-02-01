@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './components/dashboard/dashboard.module';
 import { MaterialModule } from './material/material.module';
-import { ResponseInterceptor } from './response-interceptor';
+import { RequestInterceptor } from './request-interceptor';
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import { ResponseInterceptor } from './response-interceptor';
     MaterialModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

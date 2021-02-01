@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ResponseInterceptor implements HttpInterceptor {
+export class RequestInterceptor implements HttpInterceptor {
   constructor(
     public injector: Injector
    ) { }
