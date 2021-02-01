@@ -1,0 +1,45 @@
+<div class="container">
+  <form [formGroup]="form">
+    <mat-form-field class="form">
+      <mat-label>Choose a date</mat-label>
+
+      <input
+        matInput
+        [matDatepicker]="picker"
+        formControlName="date">
+
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Countries</mat-label>
+
+      <mat-select [multiple]="countriesList" formControlName="country">
+        <mat-option *ngIf="!countriesList">-- no data --</mat-option>
+
+        <mat-option
+          *ngFor="let country of countriesList"
+          [value]="country">
+          {{country}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="applyFilters()">
+      Apply
+    </button>
+
+    <button
+      mat-flat-button
+      color="accent"
+      (click)="clearFilters()">
+      Clear
+    </button>
+  </form>
+</div>
+

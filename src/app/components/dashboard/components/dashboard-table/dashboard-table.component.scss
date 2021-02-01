@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+}
+
+tr {
+  .mat-footer-row {
+    font-weight: bold;
+  }
+
+  .mat-sort-header-sorted {
+    color: black;
+  }
+}
+
+.element-row td {
+  width: 20%;
+}
+
+.mat {
+  &-table-sticky {
+  background: #dadfff;
+  opacity: 1;
+  }
+
+  &-row:hover {
+    background: #fafafa;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,14 @@
+
+<app-dashboard-filters
+  (getFiltersData)="getFiltersData($event)"
+  [countriesList]="countriesList">
+</app-dashboard-filters>
+
+<mat-spinner *ngIf="!filteredStatistic" ></mat-spinner>
+
+<app-dashboard-table
+  *ngIf="filteredStatistic"
+  [countries]="countries"
+  [statistic]="filteredStatistic">
+</app-dashboard-table>
+

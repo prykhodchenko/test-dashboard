@@ -1,0 +1,25 @@
+<mat-toolbar>
+  <h1 mat-dialog-title>
+    {{data.regionName}}
+  </h1>
+
+  <span class="spacer"></span>
+
+  <button mat-icon-button
+    mat-dialog-close>
+    <span class="material-icons">
+      close
+    </span>
+  </button>
+</mat-toolbar>
+
+<div mat-dialog-content>
+  <app-dashboard-chart
+    *ngIf="totalCases && deceasedCases && recoverdCases"
+    [totalCases] = "totalCases"
+    [deceasedCases] = "deceasedCases"
+    [recoverdCases] = "recoverdCases">
+  </app-dashboard-chart>
+
+  <mat-spinner *ngIf="!totalCases || !deceasedCases || !recoverdCases"></mat-spinner>
+</div>
